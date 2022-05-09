@@ -1,0 +1,13 @@
+<div class="album-container">
+  <mat-card *ngFor="let album of albums" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ album.name }}</mat-card-title>
+      <mat-card-subtitle>{{ album.type }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="album.images[0].url" alt="img" />
+    <mat-card-actions>
+      <button (click)="toDetailsPage(album)" mat-button>Details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+<div class="album-container">
+  <div class="img-container">
+    <img [src]="album?.images[0]?.url" alt="img" />
+  </div>
+  <div class="info-container">
+    <div class="header">
+      <span class="title">{{ album?.name }}</span>
+      <span class="subtitle">{{ album?.artists[0].name }}</span>
+      <span class="date">{{ album?.release_date | date }}</span>
+    </div>
+    <div class="player-container">
+      <audio [src]="selectedLink" controls autoplay></audio>
+    </div>
+    <div class="track-container">
+      <div *ngFor="let track of album?.tracks?.items" class="track-item">
+        <span>{{ track?.name }}</span>
+        <button
+          class="track-button"
+          (click)="playPreview(track.preview_url)"
+          mat-button
+        >
+          Previe track
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="home-container">
+  <div class="search-container">
+    <input
+      class="search-input"
+      [value]="searchValue"
+      type="text"
+      (keyup)="search($event)"
+    />
+  </div>
+  <div class="artist-list">
+    <span
+      *ngFor="let artist of artists"
+      class="artist-item"
+      (click)="moveToArtistPage(artist)"
+      >{{ artist.name }}{{ artist.genres.join(", ") }}</span
+    >
+  </div>
+  <div *ngIf="!artists.length" class="search-history">
+    <div
+      *ngFor="let query of querys"
+      class="query-items"
+      (click)="searchItem(query.query)"
+    >
+      {{ query.query }}
+    </div>
+  </div>
+</div>
