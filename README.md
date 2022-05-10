@@ -1,4 +1,4 @@
-spotify-api
+# Spotify API
 
 First install modules for clinet and server with this command
 
