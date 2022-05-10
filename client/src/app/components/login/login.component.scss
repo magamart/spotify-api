@@ -3,4 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .login-button {
+    background-color: green;
+    border-radius: 20px;
+    width: 300px;
+    color: #fff;
+  }
 }
